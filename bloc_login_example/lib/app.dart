@@ -22,7 +22,7 @@ class App extends StatelessWidget {
       value: authRepository,
       child: BlocProvider(
         create: (context) => AuthBloc(
-            authRepository: authRepository, userRepository: userRepository),
+            authRepository: authRepository, userRepository: userRepository)..add(const AuthEvent.statusSubscription()),
         child: const AppView(),
       ),
     );

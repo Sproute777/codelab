@@ -24,7 +24,9 @@ class AuthState with _$AuthState {
 
   const factory AuthState.unregistered() = UndregistredAuthState;
 
-  const factory AuthState.registered(User user) = RegistredAuthState;
+  const factory AuthState.registered(User user) = RegisteredAuthState;
+
+  bool isLogin() => this is RegisteredAuthState;
 }
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
@@ -47,7 +49,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   Future<void> _onAuthStatusSubscription(
       _StatusSubscriptionAuthEvent event, Emitter<AuthState> emit) async {
-    emit.onEach(
+   await emit.onEach<AuthStatus>(
       _authRepository.status,
       onData: (status) async {
         switch (status) {

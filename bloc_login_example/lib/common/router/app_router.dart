@@ -14,7 +14,7 @@ abstract class AppRouter {
         routes: $appRoutes,
         //refreshListenable: ,
         redirect: (context, state) {
-          final loggedIn = context.read<AuthBloc>().state is RegistredAuthState;
+          final loggedIn = context.read<AuthBloc>().state.isLogin();
           final loggingIn = state.subloc == const LoginRoute().location;
 
           if (!loggedIn && !loggingIn) {

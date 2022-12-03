@@ -7,8 +7,11 @@ import 'common/router/app_router.dart';
 import 'features/auth/bloc/auth_bloc.dart';
 
 class App extends StatelessWidget {
-  const App(
-      {required this.userRepository, required this.authRepository, super.key});
+  const App({
+    required this.userRepository,
+    required this.authRepository,
+    super.key,
+  });
 
   final AuthRepository authRepository;
   final UserRepository userRepository;
@@ -39,7 +42,7 @@ class _AppViewState extends State<AppView> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-  restorationScopeId: 'app',
+      restorationScopeId: 'app',
       routerDelegate: _appRouter.routerDelegate,
       routeInformationParser: _appRouter.routeInformationParser,
       routeInformationProvider: _appRouter.routeInformationProvider,

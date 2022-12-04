@@ -418,21 +418,18 @@ abstract class _StatusSubscriptionAuthEvent extends AuthEvent {
 mixin _$AuthState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() unknown,
     required TResult Function() unregistered,
     required TResult Function(User user) registered,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? unknown,
     TResult? Function()? unregistered,
     TResult? Function(User user)? registered,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? unknown,
     TResult Function()? unregistered,
     TResult Function(User user)? registered,
     required TResult orElse(),
@@ -440,22 +437,19 @@ mixin _$AuthState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_UnknownAuthState value) unknown,
-    required TResult Function(UndregistredAuthState value) unregistered,
+    required TResult Function(UnregistredAuthState value) unregistered,
     required TResult Function(RegisteredAuthState value) registered,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UnknownAuthState value)? unknown,
-    TResult? Function(UndregistredAuthState value)? unregistered,
+    TResult? Function(UnregistredAuthState value)? unregistered,
     TResult? Function(RegisteredAuthState value)? registered,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UnknownAuthState value)? unknown,
-    TResult Function(UndregistredAuthState value)? unregistered,
+    TResult Function(UnregistredAuthState value)? unregistered,
     TResult Function(RegisteredAuthState value)? registered,
     required TResult orElse(),
   }) =>
@@ -480,134 +474,25 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
 }
 
 /// @nodoc
-abstract class _$$_UnknownAuthStateCopyWith<$Res> {
-  factory _$$_UnknownAuthStateCopyWith(
-          _$_UnknownAuthState value, $Res Function(_$_UnknownAuthState) then) =
-      __$$_UnknownAuthStateCopyWithImpl<$Res>;
+abstract class _$$UnregistredAuthStateCopyWith<$Res> {
+  factory _$$UnregistredAuthStateCopyWith(_$UnregistredAuthState value,
+          $Res Function(_$UnregistredAuthState) then) =
+      __$$UnregistredAuthStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_UnknownAuthStateCopyWithImpl<$Res>
-    extends _$AuthStateCopyWithImpl<$Res, _$_UnknownAuthState>
-    implements _$$_UnknownAuthStateCopyWith<$Res> {
-  __$$_UnknownAuthStateCopyWithImpl(
-      _$_UnknownAuthState _value, $Res Function(_$_UnknownAuthState) _then)
+class __$$UnregistredAuthStateCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$UnregistredAuthState>
+    implements _$$UnregistredAuthStateCopyWith<$Res> {
+  __$$UnregistredAuthStateCopyWithImpl(_$UnregistredAuthState _value,
+      $Res Function(_$UnregistredAuthState) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_UnknownAuthState extends _UnknownAuthState {
-  const _$_UnknownAuthState() : super._();
-
-  @override
-  String toString() {
-    return 'AuthState.unknown()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_UnknownAuthState);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() unknown,
-    required TResult Function() unregistered,
-    required TResult Function(User user) registered,
-  }) {
-    return unknown();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? unknown,
-    TResult? Function()? unregistered,
-    TResult? Function(User user)? registered,
-  }) {
-    return unknown?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? unknown,
-    TResult Function()? unregistered,
-    TResult Function(User user)? registered,
-    required TResult orElse(),
-  }) {
-    if (unknown != null) {
-      return unknown();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_UnknownAuthState value) unknown,
-    required TResult Function(UndregistredAuthState value) unregistered,
-    required TResult Function(RegisteredAuthState value) registered,
-  }) {
-    return unknown(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UnknownAuthState value)? unknown,
-    TResult? Function(UndregistredAuthState value)? unregistered,
-    TResult? Function(RegisteredAuthState value)? registered,
-  }) {
-    return unknown?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UnknownAuthState value)? unknown,
-    TResult Function(UndregistredAuthState value)? unregistered,
-    TResult Function(RegisteredAuthState value)? registered,
-    required TResult orElse(),
-  }) {
-    if (unknown != null) {
-      return unknown(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _UnknownAuthState extends AuthState {
-  const factory _UnknownAuthState() = _$_UnknownAuthState;
-  const _UnknownAuthState._() : super._();
-}
-
-/// @nodoc
-abstract class _$$UndregistredAuthStateCopyWith<$Res> {
-  factory _$$UndregistredAuthStateCopyWith(_$UndregistredAuthState value,
-          $Res Function(_$UndregistredAuthState) then) =
-      __$$UndregistredAuthStateCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$UndregistredAuthStateCopyWithImpl<$Res>
-    extends _$AuthStateCopyWithImpl<$Res, _$UndregistredAuthState>
-    implements _$$UndregistredAuthStateCopyWith<$Res> {
-  __$$UndregistredAuthStateCopyWithImpl(_$UndregistredAuthState _value,
-      $Res Function(_$UndregistredAuthState) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$UndregistredAuthState extends UndregistredAuthState {
-  const _$UndregistredAuthState() : super._();
+class _$UnregistredAuthState extends UnregistredAuthState {
+  const _$UnregistredAuthState() : super._();
 
   @override
   String toString() {
@@ -617,7 +502,7 @@ class _$UndregistredAuthState extends UndregistredAuthState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$UndregistredAuthState);
+        (other.runtimeType == runtimeType && other is _$UnregistredAuthState);
   }
 
   @override
@@ -626,7 +511,6 @@ class _$UndregistredAuthState extends UndregistredAuthState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() unknown,
     required TResult Function() unregistered,
     required TResult Function(User user) registered,
   }) {
@@ -636,7 +520,6 @@ class _$UndregistredAuthState extends UndregistredAuthState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? unknown,
     TResult? Function()? unregistered,
     TResult? Function(User user)? registered,
   }) {
@@ -646,7 +529,6 @@ class _$UndregistredAuthState extends UndregistredAuthState {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? unknown,
     TResult Function()? unregistered,
     TResult Function(User user)? registered,
     required TResult orElse(),
@@ -660,8 +542,7 @@ class _$UndregistredAuthState extends UndregistredAuthState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_UnknownAuthState value) unknown,
-    required TResult Function(UndregistredAuthState value) unregistered,
+    required TResult Function(UnregistredAuthState value) unregistered,
     required TResult Function(RegisteredAuthState value) registered,
   }) {
     return unregistered(this);
@@ -670,8 +551,7 @@ class _$UndregistredAuthState extends UndregistredAuthState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UnknownAuthState value)? unknown,
-    TResult? Function(UndregistredAuthState value)? unregistered,
+    TResult? Function(UnregistredAuthState value)? unregistered,
     TResult? Function(RegisteredAuthState value)? registered,
   }) {
     return unregistered?.call(this);
@@ -680,8 +560,7 @@ class _$UndregistredAuthState extends UndregistredAuthState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UnknownAuthState value)? unknown,
-    TResult Function(UndregistredAuthState value)? unregistered,
+    TResult Function(UnregistredAuthState value)? unregistered,
     TResult Function(RegisteredAuthState value)? registered,
     required TResult orElse(),
   }) {
@@ -692,9 +571,9 @@ class _$UndregistredAuthState extends UndregistredAuthState {
   }
 }
 
-abstract class UndregistredAuthState extends AuthState {
-  const factory UndregistredAuthState() = _$UndregistredAuthState;
-  const UndregistredAuthState._() : super._();
+abstract class UnregistredAuthState extends AuthState {
+  const factory UnregistredAuthState() = _$UnregistredAuthState;
+  const UnregistredAuthState._() : super._();
 }
 
 /// @nodoc
@@ -762,7 +641,6 @@ class _$RegisteredAuthState extends RegisteredAuthState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() unknown,
     required TResult Function() unregistered,
     required TResult Function(User user) registered,
   }) {
@@ -772,7 +650,6 @@ class _$RegisteredAuthState extends RegisteredAuthState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? unknown,
     TResult? Function()? unregistered,
     TResult? Function(User user)? registered,
   }) {
@@ -782,7 +659,6 @@ class _$RegisteredAuthState extends RegisteredAuthState {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? unknown,
     TResult Function()? unregistered,
     TResult Function(User user)? registered,
     required TResult orElse(),
@@ -796,8 +672,7 @@ class _$RegisteredAuthState extends RegisteredAuthState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_UnknownAuthState value) unknown,
-    required TResult Function(UndregistredAuthState value) unregistered,
+    required TResult Function(UnregistredAuthState value) unregistered,
     required TResult Function(RegisteredAuthState value) registered,
   }) {
     return registered(this);
@@ -806,8 +681,7 @@ class _$RegisteredAuthState extends RegisteredAuthState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UnknownAuthState value)? unknown,
-    TResult? Function(UndregistredAuthState value)? unregistered,
+    TResult? Function(UnregistredAuthState value)? unregistered,
     TResult? Function(RegisteredAuthState value)? registered,
   }) {
     return registered?.call(this);
@@ -816,8 +690,7 @@ class _$RegisteredAuthState extends RegisteredAuthState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UnknownAuthState value)? unknown,
-    TResult Function(UndregistredAuthState value)? unregistered,
+    TResult Function(UnregistredAuthState value)? unregistered,
     TResult Function(RegisteredAuthState value)? registered,
     required TResult orElse(),
   }) {

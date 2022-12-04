@@ -1,4 +1,4 @@
-name: fakestore_api
+name: fakestore_repository
 description: A new Flutter package project.
 version: 0.0.1
 publish_to: none
@@ -8,23 +8,20 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
-  dio: ^4.0.6
   flutter:
     sdk: flutter
-  json_annotation: ^4.7.0
-  retrofit: ^3.3.1
+      
+  fakestore_api:
+    path: ../fakestore_api
+  dio: ^4.0.6
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
-  build_runner: ^2.1.0
-  retrofit_generator: ^4.2.0
-  json_serializable: ^6.5.4
   mocktail: ^0.3.0
 
-# For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter packages.
 flutter:

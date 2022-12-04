@@ -63,10 +63,12 @@ when login successed
 emits [submissionInProgress, submissionSucces]
 when login failure 
 ''',
-        setUp: () { when(
-              () => authRepository.logIn(
-                  username: 'username', password: 'password'),
-            ).thenThrow(Exception('oops'));},
+        setUp: () {
+          when(
+            () => authRepository.logIn(
+                username: 'username', password: 'password'),
+          ).thenThrow(Exception('oops'));
+        },
         build: () => LoginBloc(authRepository: authRepository),
         act: (bloc) {
           bloc
@@ -88,10 +90,9 @@ when login failure
                   password: Password.dirty('password'),
                   status: FormzStatus.submissionInProgress),
               LoginState(
-                username: Username.dirty('username'),
-                password: Password.dirty('password'),
-                status: FormzStatus.submissionFailure
-              )
+                  username: Username.dirty('username'),
+                  password: Password.dirty('password'),
+                  status: FormzStatus.submissionFailure)
             ]);
   });
 }

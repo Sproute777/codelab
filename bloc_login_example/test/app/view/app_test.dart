@@ -10,13 +10,13 @@ import 'package:mocktail/mocktail.dart';
 import 'package:user_repository/user_repository.dart';
 import 'package:bloc_test/bloc_test.dart';
 
-
 class MockUser extends Mock implements User {}
 
 class MockAuthRepository extends Mock implements AuthRepository {}
+
 class MockUserRepository extends Mock implements UserRepository {}
 
-class MockAuthBloc extends MockBloc<AuthEvent,AuthState> implements AuthBloc {}
+class MockAuthBloc extends MockBloc<AuthEvent, AuthState> implements AuthBloc {}
 
 void main() {
   group('App', () {
@@ -29,10 +29,6 @@ void main() {
       when(() => authRepository.status).thenAnswer(
         (_) => const Stream.empty(),
       );
-      // when(() => authenticationRepository.currentUser).thenReturn(user);
-      // when(() => user.isNotEmpty).thenReturn(true);
-      // when(() => user.isEmpty).thenReturn(false);
-      // when(() => user.email).thenReturn('test@gmail.com');
     });
 
     testWidgets('renders AppView', (tester) async {
@@ -82,6 +78,5 @@ void main() {
       await tester.pumpAndSettle();
       expect(find.byType(HomePage), findsOneWidget);
     });
-  }); }
-
-
+  });
+}

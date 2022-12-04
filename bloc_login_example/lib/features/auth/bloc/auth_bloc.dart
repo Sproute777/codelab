@@ -20,9 +20,7 @@ class AuthEvent with _$AuthEvent {
 class AuthState with _$AuthState {
   const AuthState._();
 
-  const factory AuthState.unknown() = _UnknownAuthState;
-
-  const factory AuthState.unregistered() = UndregistredAuthState;
+  const factory AuthState.unregistered() = UnregistredAuthState;
 
   const factory AuthState.registered(User user) = RegisteredAuthState;
 
@@ -35,7 +33,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     required UserRepository userRepository,
   })  : _authRepository = authRepository,
         _userRepository = userRepository,
-        super(const _UnknownAuthState()) {
+        super(const UnregistredAuthState()) {
     on<LogoutRequestedAuthEvent>(_onLogoutRequested);
     on<_StatusSubscriptionAuthEvent>(_onAuthStatusSubscription);
   }
@@ -49,7 +47,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   Future<void> _onAuthStatusSubscription(
       _StatusSubscriptionAuthEvent event, Emitter<AuthState> emit) async {
-   await emit.onEach<AuthStatus>(
+    await emit.onEach<AuthStatus>(
       _authRepository.status,
       onData: (status) async {
         switch (status) {
@@ -60,6 +58,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
                 : const AuthState.unregistered());
             break;
           case AuthStatus.unregistered:
+          case AuthStatus.unknown:
           default:
             emit(const AuthState.unregistered());
         }

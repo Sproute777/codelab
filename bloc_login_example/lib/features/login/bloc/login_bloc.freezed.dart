@@ -575,11 +575,12 @@ class __$$InitialLoginStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$InitialLoginState implements InitialLoginState {
+class _$InitialLoginState extends InitialLoginState {
   const _$InitialLoginState(
       {this.status = FormzStatus.pure,
       this.username = const Username.pure(),
-      this.password = const Password.pure()});
+      this.password = const Password.pure()})
+      : super._();
 
   @override
   @JsonKey()
@@ -618,11 +619,12 @@ class _$InitialLoginState implements InitialLoginState {
       __$$InitialLoginStateCopyWithImpl<_$InitialLoginState>(this, _$identity);
 }
 
-abstract class InitialLoginState implements LoginState {
+abstract class InitialLoginState extends LoginState {
   const factory InitialLoginState(
       {final FormzStatus status,
       final Username username,
       final Password password}) = _$InitialLoginState;
+  const InitialLoginState._() : super._();
 
   @override
   FormzStatus get status;

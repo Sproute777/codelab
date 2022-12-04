@@ -18,6 +18,7 @@ class LoginEvent with _$LoginEvent {
 
 @freezed
 class LoginState with _$LoginState {
+  const LoginState._();
   const factory LoginState({
     @Default(FormzStatus.pure) FormzStatus status,
     @Default(Username.pure()) Username username,
@@ -29,6 +30,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   LoginBloc({required AuthRepository authRepository})
       : _authRepository = authRepository,
         super(const LoginState()) {
+    // print('${state.status.isInvalid}');
     on<_UsernameChangedLoginEvent>(_onUsernameChanged);
     on<_PasswordChangedLoginEvent>(_onPasswordChanged);
     on<_SubmittedLoginEvent>(_onSubmitted);
@@ -61,7 +63,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
             username: state.username.value, password: state.password.value);
         emit(state.copyWith(status: FormzStatus.submissionSuccess));
       } catch (_) {
-        emit(state.copyWith(status: FormzStatus.submissionSuccess));
+        emit(state.copyWith(status: FormzStatus.submissionFailure));
       }
     }
   }

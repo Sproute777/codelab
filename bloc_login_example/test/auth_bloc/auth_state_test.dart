@@ -7,7 +7,6 @@ class MockUser extends Mock implements User {}
 
 void main() {
   group('AuthenticationState', () {
-
     group('AuthenticationState.authenticated', () {
       test('supports value comparisons', () {
         final user = MockUser();

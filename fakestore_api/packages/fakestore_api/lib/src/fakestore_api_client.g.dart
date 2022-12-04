@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'dummijson_api_client.dart';
+part of 'fakestore_api_client.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -8,8 +8,8 @@ part of 'dummijson_api_client.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
 
-class _DummijsonApiClient implements DummijsonApiClient {
-  _DummijsonApiClient(
+class _FakestoreApiClient implements FakestoreApiClient {
+  _FakestoreApiClient(
     this._dio, {
     this.baseUrl,
   }) {

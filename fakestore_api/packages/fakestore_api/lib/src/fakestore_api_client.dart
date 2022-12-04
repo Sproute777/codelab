@@ -3,13 +3,13 @@ import 'package:retrofit/retrofit.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/http.dart';
 
-import 'dummijson_enpoints.dart';
+import '_enpoints.dart';
 
-part 'dummijson_api_client.g.dart';
+part 'fakestore_api_client.g.dart';
 
 @RestApi(baseUrl: Endpoints.baseUrl)
-abstract class DummijsonApiClient {
-  factory DummijsonApiClient(Dio dio) = _DummijsonApiClient;
+abstract class FakestoreApiClient {
+  factory FakestoreApiClient(Dio dio) = _FakestoreApiClient;
 
   @GET('')
   Future<String> getUsers();

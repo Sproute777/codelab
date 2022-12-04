@@ -13,7 +13,7 @@ class _FakestoreApiClient implements FakestoreApiClient {
     this._dio, {
     this.baseUrl,
   }) {
-    baseUrl ??= 'https://dummyjson.com';
+    baseUrl ??= 'https://fakestoreapi.com';
   }
 
   final Dio _dio;
@@ -39,6 +39,30 @@ class _FakestoreApiClient implements FakestoreApiClient {
         )
         .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = _result.data!;
+    return value;
+  }
+
+  @override
+  Future<TokenDto> login(loginRequest) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(loginRequest.toJson());
+    final _result =
+        await _dio.fetch<Map<String, dynamic>>(_setStreamType<TokenDto>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/login',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = TokenDto.fromJson(_result.data!);
     return value;
   }
 

@@ -1,6 +1,7 @@
-name: dummijson_api
-description: http api for dummijson.
+name: fakestore_api
+description: A new Flutter package project.
 version: 0.0.1
+homepage:
 
 environment:
   sdk: '>=2.18.5 <3.0.0'

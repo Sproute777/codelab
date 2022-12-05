@@ -21,13 +21,13 @@ class _DummijsonApiClient implements DummijsonApiClient {
   String? baseUrl;
 
   @override
-  Future<List<UserDto>> getUsers() async {
+  Future<ListUserDto> getUsers() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    final _result =
-        await _dio.fetch<List<dynamic>>(_setStreamType<List<UserDto>>(Options(
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<ListUserDto>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -39,9 +39,7 @@ class _DummijsonApiClient implements DummijsonApiClient {
               data: _data,
             )
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    var value = _result.data!
-        .map((dynamic i) => UserDto.fromJson(i as Map<String, dynamic>))
-        .toList();
+    final value = ListUserDto.fromJson(_result.data!);
     return value;
   }
 
@@ -96,14 +94,14 @@ class _DummijsonApiClient implements DummijsonApiClient {
   }
 
   @override
-  Future<HttpResponse<String>> login(loginRequest) async {
+  Future<TokenDto> login(loginRequest) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(loginRequest.toJson());
     final _result =
-        await _dio.fetch<String>(_setStreamType<HttpResponse<String>>(Options(
+        await _dio.fetch<Map<String, dynamic>>(_setStreamType<TokenDto>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -115,9 +113,8 @@ class _DummijsonApiClient implements DummijsonApiClient {
               data: _data,
             )
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = _result.data!;
-    final httpResponse = HttpResponse(value, _result);
-    return httpResponse;
+    final value = TokenDto.fromJson(_result.data!);
+    return value;
   }
 
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {

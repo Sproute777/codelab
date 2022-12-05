@@ -14,7 +14,7 @@ abstract class DummijsonApiClient {
     return _DummijsonApiClient(innerDio, baseUrl: baseUrl);
   }
   @GET(Endpoints.users)
-  Future<List<UserDto>> getUsers();
+  Future<ListUserDto> getUsers();
 
   @GET(Endpoints.products)
   Future<List<ProductDto>> getProducts();
@@ -26,7 +26,7 @@ abstract class DummijsonApiClient {
   // Future<TokenDto> login(@Body() LoginRequestBody loginRequest);
 
   @POST(Endpoints.login)
-  Future<HttpResponse<String>> login(@Body() LoginRequestBody loginRequest);
+  Future<TokenDto> login(@Body() LoginRequestBody loginRequest);
 
   // /// получить одну сыгранную игру
   // @GET('/{id}')

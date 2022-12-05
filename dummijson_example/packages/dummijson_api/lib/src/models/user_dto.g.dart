@@ -6,31 +6,22 @@ part of 'user_dto.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+ListUserDto _$ListUserDtoFromJson(Map<String, dynamic> json) => ListUserDto(
+      users: (json['users'] as List<dynamic>)
+          .map((e) => UserDto.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
 UserDto _$UserDtoFromJson(Map<String, dynamic> json) => UserDto(
-      name: NameDto.fromJson(json['name'] as Map<String, dynamic>),
-      address: AddressDto.fromJson(json['address'] as Map<String, dynamic>),
       id: json['id'] as int,
+      firstName: json['firstName'] as String,
+      lastName: json['lastName'] as String,
+      maidenName: json['maidenName'] as String,
+      age: json['age'] as int,
+      gender: json['gender'] as String,
       email: json['email'] as String,
-      password: json['password'] as String,
       phone: json['phone'] as String,
-    );
-
-NameDto _$NameDtoFromJson(Map<String, dynamic> json) => NameDto(
-      firstname: json['firstname'] as String,
-      lastname: json['lastname'] as String,
-    );
-
-AddressDto _$AddressDtoFromJson(Map<String, dynamic> json) => AddressDto(
-      city: json['city'] as String,
-      street: json['street'] as String,
-      number: json['number'] as int,
-      zipcode: json['zipcode'] as String,
-      geolocationDto: GeolocationDto.fromJson(
-          json['geolocationDto'] as Map<String, dynamic>),
-    );
-
-GeolocationDto _$GeolocationDtoFromJson(Map<String, dynamic> json) =>
-    GeolocationDto(
-      lat: json['lat'] as String,
-      long: json['long'] as String,
+      username: json['username'] as String,
+      password: json['password'] as String,
+      image: json['image'] as String,
     );

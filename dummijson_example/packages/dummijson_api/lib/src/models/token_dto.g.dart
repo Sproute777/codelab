@@ -7,5 +7,12 @@ part of 'token_dto.dart';
 // **************************************************************************
 
 TokenDto _$TokenDtoFromJson(Map<String, dynamic> json) => TokenDto(
-      json['token'] as String,
+      id: json['id'] as int,
+      username: json['username'] as String,
+      email: json['email'] as String,
+      firstName: json['firstName'] as String,
+      lastName: json['lastName'] as String,
+      gender: json['gender'] as String,
+      image: json['image'] as String,
+      token: json['token'] as String,
     );

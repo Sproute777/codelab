@@ -1,12 +1,30 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 // ignore_for_file: invalid_annotation_target
 
 import 'package:json_annotation/json_annotation.dart';
+
 part 'token_dto.g.dart';
 
 @JsonSerializable(createToJson: false)
 class TokenDto {
+  final int id;
+  final String username;
+  final String email;
+  final String firstName;
+  final String lastName;
+  final String gender;
+  final String image;
   final String token;
-  const TokenDto(this.token);
+  const TokenDto({
+    required this.id,
+    required this.username,
+    required this.email,
+    required this.firstName,
+    required this.lastName,
+    required this.gender,
+    required this.image,
+    required this.token,
+  });
 
   factory TokenDto.fromJson(Map<String, dynamic> json) =>
       _$TokenDtoFromJson(json);

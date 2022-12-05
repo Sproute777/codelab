@@ -2,73 +2,45 @@
 
 import 'package:json_annotation/json_annotation.dart';
 
-// import 'address_dto.dart';
-// import 'name_dto.dart';
 part 'user_dto.g.dart';
+
+@JsonSerializable(createToJson: false)
+class ListUserDto {
+  List<UserDto> users;
+  ListUserDto({
+    required this.users,
+  });
+
+  factory ListUserDto.fromJson(Map<String, dynamic> json) =>
+      _$ListUserDtoFromJson(json);
+}
 
 @JsonSerializable(createToJson: false)
 class UserDto {
   final int id;
+  final String firstName;
+  final String lastName;
+  final String maidenName;
+  final int age;
+  final String gender;
   final String email;
-  final String password;
-  final NameDto name;
-  final AddressDto address;
   final String phone;
-  const UserDto({
-    required this.name,
-    required this.address,
+  final String username;
+  final String password;
+  final String image;
+  UserDto({
     required this.id,
+    required this.firstName,
+    required this.lastName,
+    required this.maidenName,
+    required this.age,
+    required this.gender,
     required this.email,
-    required this.password,
     required this.phone,
+    required this.username,
+    required this.password,
+    required this.image,
   });
-
   factory UserDto.fromJson(Map<String, dynamic> json) =>
       _$UserDtoFromJson(json);
-}
-
-@JsonSerializable(createToJson: false)
-class NameDto {
-  final String firstname;
-  final String lastname;
-
-  const NameDto({
-    required this.firstname,
-    required this.lastname,
-  });
-
-  factory NameDto.fromJson(Map<String, dynamic> json) =>
-      _$NameDtoFromJson(json);
-}
-
-@JsonSerializable(createToJson: false)
-class AddressDto {
-  final String city;
-  final String street;
-  final int number;
-  final String zipcode;
-  final GeolocationDto geolocationDto;
-
-  const AddressDto(
-      {required this.city,
-      required this.street,
-      required this.number,
-      required this.zipcode,
-      required this.geolocationDto});
-
-  factory AddressDto.fromJson(Map<String, dynamic> json) =>
-      _$AddressDtoFromJson(json);
-}
-
-@JsonSerializable(createToJson: false)
-class GeolocationDto {
-  final String lat;
-  final String long;
-  const GeolocationDto({
-    required this.lat,
-    required this.long,
-  });
-
-  factory GeolocationDto.fromJson(Map<String, dynamic> json) =>
-      _$GeolocationDtoFromJson(json);
 }

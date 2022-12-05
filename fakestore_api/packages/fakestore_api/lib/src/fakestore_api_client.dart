@@ -12,13 +12,20 @@ part 'fakestore_api_client.g.dart';
 abstract class FakestoreApiClient {
   factory FakestoreApiClient({Dio? dio, String? baseUrl}) {
     final innerDio = dio ?? Dio();
-    return _FakestoreApiClient(innerDio);
+    return _FakestoreApiClient(innerDio, baseUrl: baseUrl);
   }
-  @GET('')
-  Future<String> getUsers();
+  @GET(Endpoints.users)
+  Future<List<UserDto>> getUsers();
+
+  @GET(Endpoints.products)
+  Future<List<ProductDto>> getProducts();
+
+  @GET(Endpoints.carts)
+  Future<List<CartDto>> getCarts();
 
   @POST(Endpoints.login)
   Future<TokenDto> login(@Body() LoginRequestBody loginRequest);
+
   // /// получить одну сыгранную игру
   // @GET('/{id}')
   // Future<String> getReport({

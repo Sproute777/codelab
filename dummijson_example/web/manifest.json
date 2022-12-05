@@ -1,6 +1,6 @@
 {
-    "name": "fakestore_api",
-    "short_name": "fakestore_api",
+    "name": "dummijson_example",
+    "short_name": "dummijson_example",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

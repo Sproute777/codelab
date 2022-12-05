@@ -1,4 +1,4 @@
-package com.example.fakestore_api
+package com.example.dummijson_example
 
 import io.flutter.embedding.android.FlutterActivity
 

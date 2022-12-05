@@ -1,7 +1,6 @@
 import 'package:retrofit/retrofit.dart';
 
 import 'package:dio/dio.dart';
-import 'package:retrofit/http.dart';
 
 import '_enpoints.dart';
 import 'models/models.dart';
@@ -23,8 +22,11 @@ abstract class DummijsonApiClient {
   @GET(Endpoints.carts)
   Future<List<CartDto>> getCarts();
 
+  // @POST(Endpoints.login)
+  // Future<TokenDto> login(@Body() LoginRequestBody loginRequest);
+
   @POST(Endpoints.login)
-  Future<TokenDto> login(@Body() LoginRequestBody loginRequest);
+  Future<HttpResponse<String>> login(@Body() LoginRequestBody loginRequest);
 
   // /// получить одну сыгранную игру
   // @GET('/{id}')

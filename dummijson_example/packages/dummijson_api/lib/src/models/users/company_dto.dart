@@ -1,6 +1,5 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:dummijson_api/src/models/users/address_dto.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'address_dto.dart';
 
 part 'company_dto.g.dart';
 

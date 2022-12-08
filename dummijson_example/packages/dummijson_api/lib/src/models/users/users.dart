@@ -4,3 +4,4 @@ export 'company_dto.dart';
 export 'coordinates_dto.dart';
 export 'hair_dto.dart';
 export 'user_dto.dart';
+export 'list_user_dto.dart';

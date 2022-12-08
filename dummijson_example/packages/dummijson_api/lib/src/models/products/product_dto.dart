@@ -4,23 +4,6 @@ import 'package:json_annotation/json_annotation.dart';
 part 'product_dto.g.dart';
 
 @JsonSerializable(createToJson: false)
-class ListProductDto {
-  final List<ProductDto> products;
-  final int total;
-  final int skip;
-  final int limit;
-  const ListProductDto({
-    required this.products,
-    required this.total,
-    required this.skip,
-    required this.limit,
-  });
-
-  factory ListProductDto.fromJson(Map<String, dynamic> json) =>
-      _$ListProductDtoFromJson(json);
-}
-
-@JsonSerializable(createToJson: false)
 class ProductDto {
   final int id;
   final String title;

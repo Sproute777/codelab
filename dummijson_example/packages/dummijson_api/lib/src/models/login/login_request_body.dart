@@ -11,6 +11,5 @@ class LoginRequestBody {
   });
 
   Map<String, dynamic> toJson() => _$LoginRequestBodyToJson(this);
-  // factory LoginRequest.toJson() => _LoginRequestFromJson(json);
 
 }

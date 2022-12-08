@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'post_dto.dart';
+part of 'comment_dto.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-PostDto _$PostDtoFromJson(Map<String, dynamic> json) => PostDto(
+CommentDto _$CommentDtoFromJson(Map<String, dynamic> json) => CommentDto(
       id: json['id'] as int,
-      title: json['title'] as String,
       body: json['body'] as String,
-      userId: json['userId'] as int,
-      tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
-      reaction: json['reaction'] as int,
+      postId: json['postId'] as int,
+      user: CommentUserDto.fromJson(json['user'] as Map<String, dynamic>),
     );

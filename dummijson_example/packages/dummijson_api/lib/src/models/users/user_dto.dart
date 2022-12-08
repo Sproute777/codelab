@@ -1,23 +1,10 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-
-import 'package:dummijson_api/src/models/users/company_dto.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import 'address_dto.dart';
+import 'company_dto.dart';
 import 'hair_dto.dart';
 
 part 'user_dto.g.dart';
-
-@JsonSerializable(createToJson: false)
-class ListUserDto {
-  List<UserDto> users;
-  ListUserDto({
-    required this.users,
-  });
-
-  factory ListUserDto.fromJson(Map<String, dynamic> json) =>
-      _$ListUserDtoFromJson(json);
-}
 
 @JsonSerializable(createToJson: false)
 class UserDto {

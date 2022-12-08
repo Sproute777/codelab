@@ -5,9 +5,9 @@ abstract class Endpoints {
   static const String carts = '/carts';
   static const String users = '/users';
 
-  //  static const String a = '';
-  //  static const String a = '';
-  //  static const String a = '';
-  //  static const String a = '';
+   static const String posts = '/posts';
+   static const String quotes = '/quotes';
+   static const String comments = '/comments';
+   static const String todos = '/todos';
 
 }

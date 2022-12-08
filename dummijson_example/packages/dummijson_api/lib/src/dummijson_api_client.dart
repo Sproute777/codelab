@@ -2,7 +2,7 @@ import 'package:retrofit/retrofit.dart';
 
 import 'package:dio/dio.dart';
 
-import '_enpoints.dart';
+import '_endpoints.dart';
 import 'models/models.dart';
 
 part 'dummijson_api_client.g.dart';

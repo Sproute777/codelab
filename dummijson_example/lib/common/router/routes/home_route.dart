@@ -1,6 +1,5 @@
 part of 'app_routes.dart';
 
-
 @TypedGoRoute<HomeRoute>(
   path: '/home',
 )

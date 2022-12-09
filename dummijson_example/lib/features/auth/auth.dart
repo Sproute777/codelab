@@ -1,1 +1,1 @@
-export 'bloc/auth_bloc.dart';
+export 'domain/domain.dart';

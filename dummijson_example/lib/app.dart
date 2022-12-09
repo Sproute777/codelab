@@ -1,10 +1,8 @@
-import 'package:auth_repository/auth_repository.dart';
-import 'package:user_repository/user_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '/features/auth/domain/domain.dart';
 import 'common/router/app_router.dart';
-import 'features/auth/bloc/auth_bloc.dart';
 
 class App extends StatelessWidget {
   const App({

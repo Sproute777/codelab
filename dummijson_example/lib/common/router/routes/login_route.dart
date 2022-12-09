@@ -1,4 +1,3 @@
-
 part of 'app_routes.dart';
 
 @TypedGoRoute<LoginRoute>(

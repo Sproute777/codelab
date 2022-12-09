@@ -1,7 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-import '/features/auth/bloc/auth_bloc.dart';
+
+import '/features/auth/domain/bloc/auth_bloc.dart';
 import 'go_router_refresh_stream.dart';
 import 'routes/app_routes.dart';
 

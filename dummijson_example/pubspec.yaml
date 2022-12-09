@@ -23,6 +23,8 @@ dependencies:
   retrofit: ^3.3.1
   json_annotation: ^4.7.0
   uuid: ^3.0.7
+  shared_preferences: ^2.0.15
+  flutter_secure_storage: ^7.0.0
 
 dev_dependencies:
   flutter_test:

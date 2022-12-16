@@ -7,10 +7,8 @@ abstract class IAuthRepository {
   /// connection [Stream<AuthStatus>]
   Stream<AuthStatus> get status;
 
-  /// sent username and password to data
-  Future<void> logIn({required String username, required String password});
-
-  void logOut();
+  Future<void> login({required String username, required String password});
+  void logout();
   void dispose();
 }
 
@@ -29,7 +27,7 @@ class AuthRepository implements IAuthRepository {
   }
 
   @override
-  Future<void> logIn({
+  Future<void> login({
     required String username,
     required String password,
   }) async {
@@ -45,7 +43,7 @@ class AuthRepository implements IAuthRepository {
   }
 
   @override
-  void logOut() {
+  void logout() {
     _authLocalStorage.clearToken();
     _controller.add(AuthStatus.unregistered);
   }

@@ -2,8 +2,6 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '/features/auth/domain/domain.dart';
-import '../repository/auth_repository.dart';
-import '../repository/user_repository.dart';
 
 part 'auth_bloc.freezed.dart';
 
@@ -70,7 +68,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   Future<void> _onLogoutRequested(
       LogoutRequestedAuthEvent event, Emitter<AuthState> emit) async {
-    _authRepository.logOut();
+    _authRepository.logout();
   }
 
   Future<User?> _tryGetUser() async {

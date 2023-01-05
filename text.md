@@ -1,2 +1,2 @@
-count 0;
+count 2;
 second 1;
